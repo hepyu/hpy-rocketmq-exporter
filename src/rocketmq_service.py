@@ -53,13 +53,13 @@ def msg_diff(rocketmq_console_ip_port):
                 queueId = queue['queueId']
 
                 clientInfo = queue['clientInfo']
-				if(clientInfo!=None):                 
-					temp_array = clientInfo.split('@')
-					consumerClientIP = temp_array[0]  
-					consumerClientPID = temp_array[1] 
-				else:                                 
-					consumerClientIP = None           
-					consumerClientPID = None          
+		if(clientInfo!=None):                 
+		    temp_array = clientInfo.split('@')
+		    consumerClientIP = temp_array[0]  
+		    consumerClientPID = temp_array[1] 
+                else:                                 
+                    consumerClientIP = None         
+                    consumerClientPID = None
 
                 diff = int(queue['brokerOffset'] - queue['consumerOffset'])
                 lastTimestamp = queue['lastTimestamp']
